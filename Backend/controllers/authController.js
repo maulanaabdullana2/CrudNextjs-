@@ -65,14 +65,14 @@ const loginWithgoogle = async (req, res, next) => {
     };
 
     const accessToken = jwt.sign(payload, process.env.JWT_SECRET || "aaaaaa", {
-      expiresIn: "1h",
+      expiresIn: "3d",
     });
 
     const refreshToken = jwt.sign(
       payload,
       process.env.REFRESHTOKEN_SECRET || "aaaaaa",
       {
-        expiresIn: "1h",
+        expiresIn: "3d",
       },
     );
 
